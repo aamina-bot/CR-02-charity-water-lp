@@ -1,47 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Charity Water Landing Page</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Your Impact Starts Here | charity: water</title>
+
+  <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
-    <!-- Hero Section: This is the main banner at the top of the page -->
-    <section class="hero">
-        <!-- Main headline -->
-        <h1>Clean Water for Everyone</h1>
-        <!-- Subheadline -->
-        <p>Join us in bringing safe, clean water to communities in need.</p>
+  <main class="landing-page">
+
+    <!-- Left side -->
+    <section class="hero-content">
+
+      <img
+        src="img/charitywater_logo_horizontal_BlackText.png"
+        alt="charity: water logo"
+        class="logo"
+      >
+
+      <div class="hero-text">
+        <h1>
+          Your Impact
+          <br>
+          Starts Here
+        </h1>
+
+        <p class="subtitle">
+          Every student has the power to make a difference.
+        </p>
+
+        <p class="description">
+          Whether you donate, share the mission, or inspire others
+          to get involved, your actions can help bring clean and
+          accessible water to communities that need it most.
+        </p>
+
+        <a
+          href="https://www.charitywater.org/donate"
+          class="action-button"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <span>Make Change</span>
+          <span aria-hidden="true">→</span>
+        </a>
+      </div>
+
     </section>
 
-    <!-- Story Section: This tells the story of the nonprofit -->
-    <section class="story">
-        <h2>Our Story</h2>
-        <p>
-         
+    <!-- Right side -->
+    <section class="visual-section" aria-label="Clean water impact stories">
+
+      <!-- First image and quote -->
+      <div class="image-group image-group-top">
+
+        <blockquote class="quote quote-left">
+          “100% of public donations go directly to clean water projects,
+          with separate funding covering operating costs.”
+        </blockquote>
+
+        <img
+          src="img/washg.jpeg"
+          alt="Hands collecting clean water from an outdoor pipe"
+          class="impact-image"
+        >
+
+      </div>
+
+      <!-- Second image and quote -->
+      <div class="image-group image-group-bottom">
+
+        <img
+          src="img/washb.jpeg"
+          alt="Hands being washed under clean running water"
+          class="impact-image"
+        >
+
+        <blockquote class="quote quote-right">
+          “Focused on improving lives by providing access to clean and
+          safe drinking water.”
+        </blockquote>
+
+      </div>
+
     </section>
 
-    <!-- Real-World Impact Story Section -->
-    <section class="impact-story">
-        <!-- Section headline -->
-        <h2>Real Impact: Meet Amina</h2>
-        <!-- Container for image and text -->
-        <div class="impact-content">
-            <!-- Impact image -->
-            <img src="https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=600&q=80" alt="Amina smiling with clean water" class="impact-image">
-            <!-- Impact story text -->
-            <p>
-                Amina used to walk miles every day to collect water for her family. Thanks to your support, her village now has a clean water well. Amina can go to school and her family is healthier and happier.
-            </p>
-        </div>
-    </section>
-
-    <!-- Call-to-Action Section: This encourages visitors to take action -->
-    <section class="call-to-action">
-        <h2>Make a Difference</h2>
-        <p>Your support can help save lives. Every donation brings us closer to a world with clean water for all.</p>
-        <a href="#" class="donate-button">Donate Now</a>
-    </section>
+  </main>
 </body>
 </html>

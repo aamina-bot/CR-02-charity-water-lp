@@ -1,198 +1,398 @@
-/* charity: water Brand Colors & Fonts
+/* ------------------------------
+   Basic page reset
+------------------------------ */
 
-Primary Colors:
-- Yellow:     #FFC907
-- Blue:       #2E9DF7
-
-Secondary Colors:
-- Light Blue: #8BD1CB
-- Green:      #4FCB53
-- Orange:     #FF902A
-- Red:        #F5402C
-- Dark Green: #159A48
-- Pink:       #F16061
-
-Fonts:
-- Proxima Nova
-- Avenir
-
-*/
-
-/* 
-  Charity: Water Landing Page Styles
-  This CSS uses the provided color palette and beginner-friendly styles.
-*/
-
-/* Set up the main font and background color for the whole page */
-body {
-  background-color: #f4f8fb; /* Soft light blue for a fresh look */
-  font-family: 'Avenir', 'Proxima Nova', Arial, sans-serif;
+* {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  color: #222;
 }
 
-/* Add a slight shadow and rounded corners to each section for depth */
-section {
-  background: #fff; /* White background for sections */
-  border-radius: 12px; /* Rounded corners */
-  box-shadow: 0 2px 8px rgba(46, 157, 247, 0.07); /* Soft blue shadow */
-  margin: 24px 10px; /* Space between sections */
-  padding: 24px 16px;
+:root {
+  --cream: #fffaf2;
+  --orange: #bf6d43;
+  --dark-orange: #9f4f2f;
+  --brown: #875038;
+  --peach: #ffd2b8;
+  --yellow: #ffc907;
+  --black: #111111;
+  --white: #ffffff;
 }
 
-/* Hero Section Styles */
-.hero {
-  position: relative; /* Needed for overlay */
-  /* Set a background image that covers the whole section */
-  background-image: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1500&q=80');
-  background-size: cover;      /* Make the image cover the whole area */
-  background-position: center; /* Center the image */
-  background-repeat: no-repeat;
-  color: #fff;                 /* White text for contrast */
-  text-align: center;          /* Center the text */
-  padding: 60px 20px;          /* Add space above and below */
-  border-radius: 0 0 16px 16px; /* Only round bottom corners */
-
-  /* Add a dark overlay for better text readability */
-  /* This uses a simple linear-gradient overlay */
-  background-blend-mode: darken;
-  background-color: rgba(46, 157, 247, 0.45); /* Blue overlay */
-}
-
-/* Make the headline bold and modern */
-.hero h1 {
-  font-size: 2.5em;
-  font-weight: bold;
-  letter-spacing: 1px;
-  margin-bottom: 15px;
-  text-shadow: 0 2px 8px rgba(0,0,0,0.15); /* Soft shadow for readability */
-}
-
-/* Style the subheadline */
-.hero p {
-  font-size: 1.2em;
-  margin-top: 0;
-  text-shadow: 0 1px 4px rgba(0,0,0,0.12);
-}
-
-/* Story Section Styles */
-.story {
-  background-color: #8BD1CB; /* Secondary Light Blue */
-  color: #222;
-  text-align: center;
-  padding: 30px 20px;
-}
-
-/* Add accent color to section headings */
-h2 {
-  color: #2E9DF7; /* Primary blue */
-  margin-top: 0;
-  font-weight: bold;
-}
-
-/* Call-to-Action Section Styles */
-.call-to-action {
-  background-color: #FFC907; /* Primary Yellow */
-  color: #222;
-  text-align: center;
-  padding: 30px 20px;
-}
-
-/* Style the impact story image */
-.impact-image {
+html,
+body {
   width: 100%;
-  max-width: 320px;
-  border-radius: 10px;
-  margin-bottom: 16px;
-  box-shadow: 0 2px 8px rgba(46, 157, 247, 0.10);
+  min-height: 100%;
 }
 
-/* Donate Button Styles */
-.donate-button {
-  display: inline-block;
-  background-color: #4FCB53; /* Green */
-  color: #fff;
-  padding: 14px 32px;
+body {
+  overflow-x: hidden;
+  background-color: var(--orange);
+  color: var(--brown);
+  font-family: "Avenir", "Proxima Nova", Arial, sans-serif;
+}
+
+/* ------------------------------
+   Main desktop layout
+------------------------------ */
+
+.landing-page {
+  display: grid;
+  grid-template-columns: 46% 54%;
+  width: 100%;
+  min-height: 100vh;
+}
+
+/* ------------------------------
+   Left content section
+------------------------------ */
+
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  padding: 24px 42px 32px;
+  background-color: var(--cream);
+  border-radius: 0 28px 28px 0;
+}
+
+/* Official charity: water logo */
+
+.logo {
+  display: block;
+  width: 215px;
+  max-width: 100%;
+  height: auto;
+}
+
+/* Main writing area */
+
+.hero-text {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 510px;
+  padding-top: 12px;
+}
+
+/* Main headline */
+
+.hero-text h1 {
+  color: var(--dark-orange);
+  font-size: clamp(3.5rem, 5.4vw, 5rem);
+  font-weight: 800;
+  letter-spacing: -3px;
+  line-height: 0.92;
+}
+
+/* Supporting statement */
+
+.subtitle {
+  max-width: 430px;
+  margin-top: 24px;
+  color: var(--brown);
+  font-size: clamp(1.05rem, 1.5vw, 1.35rem);
+  font-style: italic;
+  line-height: 1.5;
+  text-align: center;
+}
+
+/* Description */
+
+.description {
+  max-width: 500px;
+  margin-top: 28px;
+  color: var(--brown);
+  font-size: clamp(0.95rem, 1.15vw, 1.08rem);
+  line-height: 1.7;
+}
+
+/* Call-to-action button */
+
+.action-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 26px;
+  width: 235px;
+  margin-top: 26px;
+  margin-left: auto;
+  padding: 13px 22px;
+  background-color: var(--peach);
+  border: 2px solid transparent;
+  border-radius: 14px;
+  color: var(--brown);
+  font-size: 1rem;
+  font-weight: 700;
   text-decoration: none;
-  border-radius: 6px;
-  font-weight: bold;
-  font-size: 1.1em;
-  margin-top: 18px;
-  box-shadow: 0 2px 8px rgba(79, 203, 83, 0.10);
-  transition: background 0.3s, transform 0.2s;
-  border: none;
-  cursor: pointer;
+  transition:
+    background-color 0.25s ease,
+    color 0.25s ease,
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
 }
 
-/* Change button color when hovered */
-.donate-button:hover {
-  background-color: #159A48; /* Dark Green */
-  transform: translateY(-2px) scale(1.04); /* Slight lift */
+.action-button:hover {
+  background-color: var(--yellow);
+  color: var(--black);
+  box-shadow: 0 8px 18px rgba(70, 30, 15, 0.18);
+  transform: translateY(-2px);
 }
 
-/* Add some spacing between sections */
-section {
-  margin-bottom: 20px;
+.action-button:focus-visible {
+  border-color: var(--black);
+  outline: 3px solid var(--yellow);
+  outline-offset: 4px;
 }
 
-/* 
-  Media Queries for Responsive Design
-  Media queries help make your website look good on different screen sizes,
-  like phones (small screens) and computers (large screens).
-*/
+/* ------------------------------
+   Right visual section
+------------------------------ */
 
-/* This media query applies styles when the screen is 600px wide or less (like on most phones) */
-@media (max-width: 600px) {
-  /* Make hero section padding smaller on small screens */
-  .hero {
-    padding: 32px 8px;
-    font-size: 1em;
+.visual-section {
+  position: relative;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  justify-content: center;
+  gap: 34px;
+  overflow: hidden;
+  padding: 38px 32px;
+  background-color: var(--orange);
+}
+
+/* Each image and quote row */
+
+.image-group {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  width: 100%;
+}
+
+/* Top row */
+
+.image-group-top {
+  justify-content: flex-start;
+}
+
+/* Bottom row */
+
+.image-group-bottom {
+  justify-content: flex-end;
+}
+
+/* Images */
+
+.impact-image {
+  display: block;
+  width: min(58%, 430px);
+  height: clamp(235px, 35vh, 340px);
+  object-fit: cover;
+  border-radius: 42px;
+  box-shadow: 0 16px 30px rgba(70, 32, 18, 0.18);
+}
+
+/* Transparent quotes */
+
+.quote {
+  width: min(34%, 250px);
+  padding: 18px;
+  background-color: rgba(255, 255, 255, 0.11);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: 18px;
+  color: rgba(255, 255, 255, 0.88);
+  font-size: clamp(0.88rem, 1.05vw, 1rem);
+  font-style: italic;
+  line-height: 1.65;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+
+.quote-left {
+  text-align: right;
+}
+
+.quote-right {
+  text-align: left;
+}
+
+/* ------------------------------
+   Short MacBook screens
+------------------------------ */
+
+@media (max-height: 800px) and (min-width: 901px) {
+  .hero-content {
+    padding: 18px 34px 22px;
   }
 
-  /* Make headline font size smaller so it fits on small screens */
-  .hero h1 {
-    font-size: 1.4em;
+  .logo {
+    width: 185px;
   }
 
-  /* Make subheadline font size smaller */
-  .hero p {
-    font-size: 1em;
+  .hero-text {
+    padding-top: 5px;
   }
 
-  /* Make story and call-to-action sections have less padding */
-  .story,
-  .call-to-action,
-  .donation-section {
-    padding: 14px 8px;
+  .hero-text h1 {
+    font-size: clamp(3rem, 4.6vw, 4.15rem);
   }
 
-  /* Make impact story image smaller and stack above the text */
-  .impact-content {
-    display: block; /* Stack items vertically */
+  .subtitle {
+    margin-top: 16px;
+    font-size: 1rem;
+    line-height: 1.4;
+  }
+
+  .description {
+    margin-top: 18px;
+    font-size: 0.92rem;
+    line-height: 1.5;
+  }
+
+  .action-button {
+    width: 210px;
+    margin-top: 17px;
+    padding: 10px 18px;
+    font-size: 0.95rem;
+  }
+
+  .visual-section {
+    gap: 24px;
+    padding: 28px 26px;
+  }
+
+  .impact-image {
+    height: 265px;
+    border-radius: 34px;
+  }
+
+  .quote {
+    padding: 14px;
+    font-size: 0.82rem;
+    line-height: 1.5;
+  }
+}
+
+/* ------------------------------
+   Tablet layout
+------------------------------ */
+
+@media (max-width: 900px) {
+  .landing-page {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-content {
+    min-height: auto;
+    padding: 28px 30px 50px;
+    border-radius: 0 0 28px 28px;
+  }
+
+  .hero-text {
+    max-width: 680px;
+    margin: 0 auto;
+    padding-top: 46px;
+  }
+
+  .hero-text h1,
+  .subtitle,
+  .description {
     text-align: center;
   }
 
+  .subtitle {
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .action-button {
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .visual-section {
+    min-height: auto;
+    padding: 55px 34px;
+  }
+
+  .image-group {
+    justify-content: center;
+  }
+
   .impact-image {
-    width: 90%;    /* Make image take up most of the width */
-    max-width: 220px;
+    width: 60%;
+    max-width: 460px;
+  }
+
+  .quote {
+    width: 32%;
+    max-width: 230px;
   }
 }
 
-/* This media query applies styles when the screen is wider than 600px (like on tablets and computers) */
-@media (min-width: 601px) {
-  /* Show image and text side by side in the impact story */
-  .impact-content {
-    display: flex;           /* Place items in a row */
-    align-items: center;     /* Vertically center items */
-    justify-content: center; /* Center the whole group */
-    gap: 28px;               /* Space between image and text */
-    text-align: left;
-    max-width: 800px;
-    margin: 0 auto;
+/* ------------------------------
+   Phone layout
+------------------------------ */
+
+@media (max-width: 600px) {
+  .hero-content {
+    padding: 22px 20px 42px;
+  }
+
+  .logo {
+    width: 185px;
+  }
+
+  .hero-text {
+    padding-top: 36px;
+  }
+
+  .hero-text h1 {
+    font-size: 3rem;
+    letter-spacing: -2px;
+  }
+
+  .subtitle {
+    font-size: 1.04rem;
+  }
+
+  .description {
+    font-size: 0.96rem;
+  }
+
+  .action-button {
+    width: 100%;
+    max-width: 285px;
+  }
+
+  .visual-section {
+    gap: 42px;
+    padding: 42px 22px;
+  }
+
+  .image-group {
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  .image-group-bottom {
+    flex-direction: column;
   }
 
   .impact-image {
-    width: 300px;
+    width: 100%;
+    max-width: 420px;
+    height: 255px;
+    border-radius: 30px;
+  }
+
+  .quote {
+    width: 100%;
+    max-width: 420px;
+    padding: 16px;
+    font-size: 0.92rem;
+    text-align: center;
   }
 }
